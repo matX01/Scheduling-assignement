@@ -1,13 +1,25 @@
 from Job import Job
 from Sched import Sched
 
-JobList = [Job(2,10),
-           Job(3,10),
-           Job(2,20),
-           Job(2,20),
-           Job(2,40),
-           Job(2,40),
-           Job(3,80)]
+CONST_TRY_WITH_T5_MISS = False
+
+
+if(not CONST_TRY_WITH_T5_MISS):
+    JobList = [Job("T1",2,10),
+            Job("T2",3,10),
+            Job("T3",2,20),
+            Job("T4",2,20),
+            Job("T5",2,40),
+            Job("T6",2,40),
+            Job("T7",3,80)]
+else:
+    JobList = [Job("T1",2,10),
+            Job("T2",3,10),
+            Job("T3",2,20),
+            Job("T4",2,20),
+            Job("T6",2,40),
+            Job("T7",3,80),
+            Job("T5",2,40)]
 
 
 
@@ -22,4 +34,6 @@ if(Scheduler.IsSchedulable()):
 else:
 
     print("Task is not schedulable")
+
+
 Scheduler.ComputeScheduling()

@@ -1,9 +1,8 @@
 class Job:
 
-
-
-    def __init__(self,C: int,Ti: int) -> None:
+    def __init__(self,Name: str,C: int,Ti: int) -> None:
         
+        self.Name = Name
         self.C = C
         self.Ti = Ti
         self.PeriodRemaining = self.Ti
@@ -71,4 +70,5 @@ class Job:
         self.PeriodRemaining -= 1
 
 
-            
+    def getName(self) -> str:
+        return self.Name
